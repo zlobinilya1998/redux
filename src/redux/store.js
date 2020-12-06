@@ -2,12 +2,12 @@ import { combineReducers, createStore } from "redux";
 import messageReducer from "./reducers/messageReducer";
 import appReducer from "./reducers/appReducer";
 
-const reducers = combineReducers({
-  App: appReducer,
-  Chat: messageReducer,
-});
-
-const store = createStore(reducers);
+const store = createStore(
+  combineReducers({
+    app: appReducer,
+    chat: messageReducer,
+  })
+);
 
 window.store = store;
 
